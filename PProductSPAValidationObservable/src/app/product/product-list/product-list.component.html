@@ -1,0 +1,18 @@
+
+
+<div id="global">
+    <h2>List of Products</h2>
+<table class="table">
+  <tr *ngFor="let product of products">
+    <td>{{product.name}}</td> 
+    <td align="right">
+     <a class="btn btn-primary" [routerLink]="['/products', product.id]"><button> Details</button> </a>
+    </td>
+  </tr>
+</table>
+
+<p><a [routerLink]="['/products/new']" class="btn-primary btn-lg"><button>Add New Product</button></a></p>
+
+</div>
+
+

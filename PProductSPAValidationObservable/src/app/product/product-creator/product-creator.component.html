@@ -1,0 +1,42 @@
+   
+  <div id="global">
+<form [formGroup]="productForm" (ngSubmit)="saveProduct(productForm.value)" >
+    <fieldset>
+        <legend>Add a product</legend>
+  
+        <p>
+            <label for="name">Product Name: </label>
+             <input formControlName="name" >
+         </p>
+  
+	     <div id="errors"
+	      *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger">
+	          <div *ngIf="name.errors.required">
+	            Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+              Name must be at least 5 characters long.
+            </div>
+	     </div>
+	 
+        <p>
+            <label for="description">Description: </label>
+              <input formControlName="description">
+        </p>
+        
+         <p>
+            <label for="price">Price: </label>
+              <input formControlName="price">
+         </p>
+         
+          
+        <p id="buttons">
+  			<button type="submit" [disabled]="productForm.invalid " id="submit">Add Product</button>
+        </p>
+ 
+ <!-- [disabled]="productForm.invalid && formDir.submitted" -->
+
+    </fieldset>
+</form>
+</div>
+

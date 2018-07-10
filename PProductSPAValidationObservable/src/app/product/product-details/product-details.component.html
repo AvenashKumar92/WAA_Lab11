@@ -1,0 +1,14 @@
+<div id="global">
+     <h3>Details for {{product.name}}</h3>
+    <h4>The product has been saved.</h4>
+
+        <h5>Details:</h5>
+        Product Name: {{product.name}}<br/>
+        Description: {{product.description}}<br/>
+        Price: ${{product.price}}<br/>
+        Category: {{product.category.name}}
+    
+    <p>     <a [routerLink]="['/products']"><button> List Products</button></a>
+    
+
+ </div>
